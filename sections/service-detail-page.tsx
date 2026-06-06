@@ -61,7 +61,7 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
           <a href="/" className="hidden text-sm font-black tracking-tight text-white sm:block">
             Safe Business Services
           </a>
-          <Button asChild className="h-9 bg-white px-4 text-xs text-black hover:bg-white/90">
+          <Button asChild className="h-9 px-3 text-xs sm:px-4 bg-white text-black hover:bg-white/90">
             <a href={whatsappUrl} target="_blank" rel="noreferrer">
               Консультация
             </a>
@@ -69,22 +69,22 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
         </div>
       </header>
 
-      <section ref={heroRef} className="relative z-10 overflow-hidden bg-[#050506] px-4 pb-24 pt-28 text-white sm:px-6 lg:pt-32">
+      <section ref={heroRef} className="relative z-10 overflow-hidden bg-[#050506] px-4 pb-16 pt-24 text-white sm:px-6 sm:pb-24 lg:pt-32">
         <div className={cn("absolute inset-x-0 bottom-0 h-40 bg-gradient-to-r opacity-25 blur-3xl", service.accent)} />
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+        <div className="mx-auto grid max-w-7xl gap-8 sm:gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <motion.div initial="hidden" animate="visible" variants={reveal} transition={{ duration: 0.75 }}>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-3 py-2 text-xs font-bold text-white/70 backdrop-blur-xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-3 py-2 text-[11px] font-bold text-white/70 backdrop-blur-xl sm:text-xs">
               <Icon className="h-4 w-4 text-cyan-200" />
               {service.badge}
             </div>
-            <h1 className="mt-7 max-w-4xl text-balance text-4xl font-black leading-[0.98] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 max-w-4xl text-balance text-[2.15rem] font-black leading-[1] tracking-[-0.04em] sm:mt-7 sm:text-6xl lg:text-7xl">
               {service.title}: что входит, кому подходит и сколько занимает
             </h1>
-            <p className="mt-6 max-w-3xl text-lg font-semibold leading-8 text-white/60">
+            <p className="mt-5 max-w-3xl text-base font-semibold leading-6 text-white/60 sm:mt-6 sm:text-lg sm:leading-8">
               {service.intro}
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="bg-premium-gradient text-black shadow-orange-glow hover:scale-[1.02]">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row">
+              <Button asChild size="lg" className="h-auto min-h-12 w-full whitespace-normal px-4 py-3 text-center leading-tight bg-premium-gradient text-black shadow-orange-glow hover:scale-[1.02] sm:w-auto sm:whitespace-nowrap">
                 <a
                   href={whatsappLink(`Здравствуйте, хочу заказать ${service.shortTitle.toLowerCase()}.`)}
                   target="_blank"
@@ -94,7 +94,7 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
                   <MessageCircle className="h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="h-auto min-h-12 w-full whitespace-normal px-4 py-3 text-center leading-tight sm:w-auto sm:whitespace-nowrap">
                 <a href="#details">
                   Смотреть детали
                   <ChevronRight className="h-4 w-4" />
@@ -109,7 +109,7 @@ export function ServiceDetailPage({ service }: { service: ServiceDetail }) {
         </div>
       </section>
 
-      <section id="details" className="relative z-10 bg-[#f4f6fb] px-4 py-16 sm:px-6">
+      <section id="details" className="relative z-10 bg-[#f4f6fb] px-4 py-10 sm:px-6 sm:py-16">
         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-3">
           <InfoMetric icon={Clock3} label="Срок подготовки" value={service.time} />
           <InfoMetric icon={Target} label="Фокус" value="заявки, доверие, продажи" />
@@ -139,7 +139,7 @@ function ServiceMockup({
         initial={{ opacity: 0, rotateX: 10, y: 34 }}
         animate={{ opacity: 1, rotateX: 0, y: 0 }}
         transition={{ delay: 0.12, duration: 0.8, ease: "easeOut" }}
-        className="relative rounded-[8px] border border-white/16 bg-white/[0.08] p-4 shadow-[0_44px_140px_rgba(0,0,0,0.45)] backdrop-blur-2xl"
+      className="relative rounded-[8px] border border-white/16 bg-white/[0.08] p-3 shadow-[0_34px_100px_rgba(0,0,0,0.38)] backdrop-blur-2xl sm:p-4 sm:shadow-[0_44px_140px_rgba(0,0,0,0.45)]"
       >
         <div className="overflow-hidden rounded-[8px] border border-white/10 bg-[#0a0a0c]">
           <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
@@ -150,48 +150,48 @@ function ServiceMockup({
             </div>
             <span className="text-xs font-bold text-white/40">service.detail</span>
           </div>
-          <div className="relative overflow-hidden p-5">
+          <div className="relative overflow-hidden p-4 sm:p-5">
             <div className={cn("absolute right-[-6rem] top-[-6rem] h-56 w-56 rounded-full bg-gradient-to-br blur-2xl", service.accent, "opacity-30")} />
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.18em] text-cyan-200/70">
+                <p className="text-[11px] font-black uppercase tracking-[0.16em] text-cyan-200/70 sm:text-xs sm:tracking-[0.18em]">
                   {service.badge}
                 </p>
-                <h2 className="mt-4 text-4xl font-black tracking-[-0.05em]">{service.shortTitle}</h2>
+                <h2 className="mt-3 text-2xl font-black tracking-[-0.04em] sm:mt-4 sm:text-4xl sm:tracking-[-0.05em]">{service.shortTitle}</h2>
               </div>
-              <div className={cn("grid h-14 w-14 place-items-center rounded-[8px] bg-gradient-to-br text-black shadow-orange-glow", service.accent)}>
-                <Icon className="h-7 w-7" />
+              <div className={cn("grid h-11 w-11 shrink-0 place-items-center rounded-[8px] bg-gradient-to-br text-black shadow-orange-glow sm:h-14 sm:w-14", service.accent)}>
+                <Icon className="h-5 w-5 sm:h-7 sm:w-7" />
               </div>
             </div>
-            <div className="relative mt-6 grid grid-cols-3 gap-2">
+            <div className="relative mt-5 grid grid-cols-3 gap-2 sm:mt-6">
               {["Brief", "Design", "Launch"].map((item, index) => (
                 <motion.div
                   key={item}
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 3.6, delay: index * 0.18, repeat: Infinity, ease: "easeInOut" }}
-                  className="rounded-[8px] bg-white/[0.08] p-3 text-center"
+                  className="rounded-[8px] bg-white/[0.08] p-2 text-center sm:p-3"
                 >
                   <div className="mx-auto h-2 w-10 rounded-full bg-white/30" />
-                  <p className="mt-3 text-[11px] font-black uppercase tracking-[0.12em] text-white/50">{item}</p>
+                  <p className="mt-2 text-[9px] font-black uppercase tracking-[0.1em] text-white/50 sm:mt-3 sm:text-[11px] sm:tracking-[0.12em]">{item}</p>
                 </motion.div>
               ))}
             </div>
-            <div className="mt-8 grid gap-3">
+            <div className="mt-6 grid gap-2.5 sm:mt-8 sm:gap-3">
               {service.includes.slice(0, 4).map((item, index) => (
                 <motion.div
                   key={item}
                   animate={{ x: [0, 7, 0] }}
                   transition={{ duration: 4, delay: index * 0.24, repeat: Infinity, ease: "easeInOut" }}
-                  className="flex items-center gap-3 rounded-[8px] border border-white/10 bg-white/[0.055] px-4 py-3"
+                  className="flex items-center gap-3 rounded-[8px] border border-white/10 bg-white/[0.055] px-3 py-2.5 sm:px-4 sm:py-3"
                 >
                   <Check className="h-4 w-4 text-cyan-200" />
-                  <span className="text-sm font-bold text-white/75">{item}</span>
+                  <span className="text-xs font-bold text-white/75 sm:text-sm">{item}</span>
                 </motion.div>
               ))}
             </div>
-            <div className="mt-5 rounded-[8px] bg-premium-gradient p-5 text-black">
-              <p className="text-xs font-black uppercase tracking-[0.16em] text-black/55">Срок</p>
-              <div className="mt-2 text-3xl font-black tracking-[-0.04em]">{service.time}</div>
+            <div className="mt-4 rounded-[8px] bg-premium-gradient p-4 text-black sm:mt-5 sm:p-5">
+              <p className="text-[11px] font-black uppercase tracking-[0.14em] text-black/55 sm:text-xs sm:tracking-[0.16em]">Срок</p>
+              <div className="mt-2 text-2xl font-black tracking-[-0.04em] sm:text-3xl">{service.time}</div>
             </div>
           </div>
         </div>
@@ -215,20 +215,20 @@ function InfoMetric({
       whileInView="visible"
       viewport={viewport}
       variants={reveal}
-      className="rounded-[8px] border border-black/5 bg-white p-6 shadow-[0_18px_70px_rgba(15,23,42,0.08)]"
+      className="rounded-[8px] border border-black/5 bg-white p-5 shadow-[0_18px_70px_rgba(15,23,42,0.08)] sm:p-6"
     >
       <div className="grid h-11 w-11 place-items-center rounded-[8px] bg-[#101114] text-white">
         <Icon className="h-5 w-5 text-cyan-200" />
       </div>
-      <p className="mt-8 text-sm font-black uppercase tracking-[0.16em] text-black/40">{label}</p>
-      <p className="mt-3 text-2xl font-black tracking-[-0.035em] text-black">{value}</p>
+      <p className="mt-5 text-xs font-black uppercase tracking-[0.14em] text-black/40 sm:mt-8 sm:text-sm sm:tracking-[0.16em]">{label}</p>
+      <p className="mt-2 text-xl font-black tracking-[-0.035em] text-black sm:mt-3 sm:text-2xl">{value}</p>
     </motion.article>
   );
 }
 
 function DetailGrid({ service }: { service: ServiceDetail }) {
   return (
-    <section className="relative z-10 px-4 py-16 sm:px-6">
+    <section className="relative z-10 px-4 py-10 sm:px-6 sm:py-16">
       <div className={cn("absolute inset-x-0 top-10 h-72 bg-gradient-to-r opacity-20 blur-3xl", service.accent)} />
       <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
         <DetailList title="Кому подходит" items={service.idealFor} accent="text-cyan-500" tone="cyan" />
@@ -241,9 +241,9 @@ function DetailGrid({ service }: { service: ServiceDetail }) {
         variants={reveal}
         className={cn("mx-auto mt-6 max-w-7xl overflow-hidden rounded-[8px] bg-gradient-to-br p-1 shadow-[0_24px_90px_rgba(15,23,42,0.12)]", service.accent)}
       >
-        <div className="rounded-[7px] bg-white p-6 sm:p-8">
-          <p className="text-sm font-black uppercase tracking-[0.18em] text-black/40">Результат</p>
-          <p className="mt-4 text-2xl font-black leading-9 tracking-[-0.035em] text-black/80">
+        <div className="rounded-[7px] bg-white p-5 sm:p-8">
+          <p className="text-xs font-black uppercase tracking-[0.16em] text-black/40 sm:text-sm sm:tracking-[0.18em]">Результат</p>
+          <p className="mt-3 text-xl font-black leading-7 tracking-[-0.035em] text-black/80 sm:mt-4 sm:text-2xl sm:leading-9">
             {service.result}
           </p>
         </div>
@@ -270,12 +270,12 @@ function DetailList({
       viewport={viewport}
       variants={reveal}
       className={cn(
-        "rounded-[8px] border border-black/5 bg-white p-6 shadow-[0_18px_70px_rgba(15,23,42,0.08)] sm:p-8",
+        "rounded-[8px] border border-black/5 bg-white p-5 shadow-[0_18px_70px_rgba(15,23,42,0.08)] sm:p-8",
         tone === "cyan" ? "shadow-cyan-900/10" : "shadow-orange-900/10",
       )}
     >
-      <h2 className="text-3xl font-black tracking-[-0.04em] text-black">{title}</h2>
-      <div className="mt-8 grid gap-3">
+      <h2 className="text-2xl font-black tracking-[-0.04em] text-black sm:text-3xl">{title}</h2>
+      <div className="mt-5 grid gap-3 sm:mt-8">
         {items.map((item, index) => (
           <motion.div
             key={item}
@@ -284,7 +284,7 @@ function DetailList({
             viewport={viewport}
             transition={{ delay: index * 0.04 }}
             className={cn(
-              "flex gap-3 rounded-[8px] border p-4",
+              "flex gap-3 rounded-[8px] border p-3.5 sm:p-4",
               tone === "cyan" ? "border-cyan-100 bg-cyan-50" : "border-orange-100 bg-orange-50",
             )}
           >
@@ -299,16 +299,16 @@ function DetailList({
 
 function ProcessTimeline({ service }: { service: ServiceDetail }) {
   return (
-    <section className="relative z-10 overflow-hidden bg-[#101114] px-4 py-24 text-white sm:px-6">
+    <section className="relative z-10 overflow-hidden bg-[#101114] px-4 py-16 text-white sm:px-6 sm:py-24">
       <div className={cn("absolute left-0 top-0 h-80 w-full bg-gradient-to-r opacity-30 blur-3xl", service.accent)} />
       <div className="mx-auto max-w-7xl">
         <motion.div initial="hidden" whileInView="visible" viewport={viewport} variants={reveal}>
-          <p className="text-sm font-black uppercase tracking-[0.18em] text-cyan-200/75">Процесс</p>
-          <h2 className="mt-4 max-w-4xl text-4xl font-black leading-[0.98] tracking-[-0.05em] sm:text-6xl">
+          <p className="text-xs font-black uppercase tracking-[0.16em] text-cyan-200/75 sm:text-sm sm:tracking-[0.18em]">Процесс</p>
+          <h2 className="mt-3 max-w-4xl text-[2rem] font-black leading-[1.02] tracking-[-0.04em] sm:mt-4 sm:text-6xl sm:leading-[0.98] sm:tracking-[-0.05em]">
             Как готовим {service.shortTitle.toLowerCase()}
           </h2>
         </motion.div>
-        <div className="relative mt-12 grid gap-4">
+        <div className="relative mt-8 grid gap-3 sm:mt-12 sm:gap-4">
           <div className="absolute left-5 top-4 hidden h-[calc(100%-2rem)] w-px bg-gradient-to-b from-orange-300 via-cyan-300 to-violet-300 sm:block" />
           {service.process.map((step, index) => (
             <motion.article
@@ -317,13 +317,13 @@ function ProcessTimeline({ service }: { service: ServiceDetail }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewport}
               transition={{ delay: index * 0.05 }}
-              className="relative overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.08] p-5 pl-5 backdrop-blur-xl sm:pl-16"
+              className="relative overflow-hidden rounded-[8px] border border-white/10 bg-white/[0.08] p-4 pl-4 backdrop-blur-xl sm:p-5 sm:pl-16"
             >
               <div className={cn("absolute inset-y-0 left-0 w-1 bg-gradient-to-b", service.accent)} />
               <span className="mb-4 grid h-10 w-10 place-items-center rounded-full bg-premium-gradient text-sm font-black text-black sm:absolute sm:left-0 sm:top-5 sm:mb-0">
                 {index + 1}
               </span>
-              <p className="text-lg font-black leading-7 text-white/80">{step}</p>
+              <p className="text-base font-black leading-6 text-white/80 sm:text-lg sm:leading-7">{step}</p>
             </motion.article>
           ))}
         </div>
@@ -334,15 +334,15 @@ function ProcessTimeline({ service }: { service: ServiceDetail }) {
 
 function FormatsNavigator({ currentSlug }: { currentSlug: string }) {
   return (
-    <section className="relative z-10 bg-[#f4f6fb] px-4 py-20 sm:px-6">
+    <section className="relative z-10 bg-[#f4f6fb] px-4 py-14 sm:px-6 sm:py-20">
       <div className="mx-auto max-w-7xl">
         <motion.div initial="hidden" whileInView="visible" viewport={viewport} variants={reveal}>
-          <p className="text-sm font-black uppercase tracking-[0.18em] text-orange-500/80">3 формата</p>
-          <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] text-black sm:text-6xl">
+          <p className="text-xs font-black uppercase tracking-[0.16em] text-orange-500/80 sm:text-sm sm:tracking-[0.18em]">3 формата</p>
+          <h2 className="mt-3 text-[2rem] font-black leading-[1.02] tracking-[-0.04em] text-black sm:mt-4 sm:text-6xl sm:tracking-[-0.05em]">
             Посмотреть другие виды сайтов
           </h2>
         </motion.div>
-        <div className="mt-10 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-3 sm:mt-10 md:grid-cols-2 lg:grid-cols-3">
           {serviceDetails.map((item, index) => (
             <motion.a
               key={item.slug}
@@ -376,21 +376,21 @@ function FormatsNavigator({ currentSlug }: { currentSlug: string }) {
 
 function FinalCTA({ service }: { service: ServiceDetail }) {
   return (
-    <section className="relative z-10 bg-[#f4f6fb] px-4 py-20 sm:px-6 sm:pb-28">
+    <section className="relative z-10 bg-[#f4f6fb] px-4 py-14 sm:px-6 sm:pb-28 sm:pt-20">
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={viewport}
         variants={reveal}
-        className={cn("mx-auto max-w-6xl rounded-[8px] bg-gradient-to-br p-8 text-center text-black shadow-[0_28px_110px_rgba(15,23,42,0.14)] sm:p-12", service.accent)}
+        className={cn("mx-auto max-w-6xl rounded-[8px] bg-gradient-to-br p-5 text-center text-black shadow-[0_28px_110px_rgba(15,23,42,0.14)] sm:p-12", service.accent)}
       >
-        <h2 className="mx-auto max-w-4xl text-balance text-4xl font-black leading-[0.98] tracking-[-0.05em] sm:text-6xl">
+        <h2 className="mx-auto max-w-4xl text-balance text-[2rem] font-black leading-[1.02] tracking-[-0.04em] sm:text-6xl sm:leading-[0.98] sm:tracking-[-0.05em]">
           Хотите понять, подходит ли вам {service.shortTitle.toLowerCase()}?
         </h2>
-        <p className="mx-auto mt-5 max-w-3xl text-lg font-semibold leading-8 text-black/60">
+        <p className="mx-auto mt-4 max-w-3xl text-base font-semibold leading-6 text-black/60 sm:mt-5 sm:text-lg sm:leading-8">
           Напишите в WhatsApp — разберём вашу нишу, задачу, сроки и предложим правильный формат сайта без лишнего функционала.
         </p>
-        <Button asChild size="lg" className="mt-8 bg-premium-gradient text-black shadow-orange-glow hover:scale-[1.02]">
+        <Button asChild size="lg" className="mt-7 h-auto min-h-12 w-full whitespace-normal px-4 py-3 text-center leading-tight bg-premium-gradient text-black shadow-orange-glow hover:scale-[1.02] sm:mt-8 sm:w-auto sm:whitespace-nowrap">
           <a
             href={whatsappLink(`Здравствуйте, хочу заказать ${service.shortTitle.toLowerCase()}.`)}
             target="_blank"
