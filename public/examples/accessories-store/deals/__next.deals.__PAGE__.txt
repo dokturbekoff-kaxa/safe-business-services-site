@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[7307,["862","static/chunks/862-ca1f8edb2a1b69e3.js","223","static/chunks/223-a1ffd46034c1a19d.js","307","static/chunks/307-6984fce9728f6930.js","775","static/chunks/775-b13f7a7715f1086e.js","300","static/chunks/300-a5157d978fcfee76.js","573","static/chunks/573-fa384c9517663170.js","242","static/chunks/app/deals/page-6f0391a1f4202e7f.js"],"CatalogPage"]
+3:I[6723,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"title":"Акции и скидки","dealOnly":true}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ormM78nz-S_psBKqrbUfo"}
+5:null

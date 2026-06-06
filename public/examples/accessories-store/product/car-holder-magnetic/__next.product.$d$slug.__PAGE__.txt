@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[5866,["862","static/chunks/862-ca1f8edb2a1b69e3.js","223","static/chunks/223-a1ffd46034c1a19d.js","307","static/chunks/307-6984fce9728f6930.js","775","static/chunks/775-b13f7a7715f1086e.js","300","static/chunks/300-a5157d978fcfee76.js","490","static/chunks/app/product/%5Bslug%5D/page-374844906e74d7f9.js"],"ProductDetail"]
+3:I[6723,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"product":{"id":"p009","slug":"car-holder-magnetic","title":"Магнитный автодержатель 360","category":"car-holders","phoneBrand":"Universal","phoneModels":["iPhone","Samsung","Xiaomi"],"productBrand":"DriveFix","type":"Автодержатель","oldPrice":990,"price":690,"discount":30,"rating":4.6,"orders":522,"inStock":true,"stockLabel":"В наличии","colors":["Черный"],"images":["https://images.unsplash.com/photo-1601924994987-69e26d50dc26?auto=format&fit=crop&w=900&q=80","https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80"],"description":"Компактный держатель на вентиляционную решетку с сильными магнитами.","specs":{"Крепление":"В дефлектор","Поворот":"360 градусов","Магниты":"N52"}}}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ormM78nz-S_psBKqrbUfo"}
+5:null

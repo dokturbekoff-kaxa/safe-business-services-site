@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+dist
+.env*
+.tools
+*-preview.png
+*.tsbuildinfo
+.DS_Store

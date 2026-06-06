@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[6723,[],"ViewportBoundary"]
+3:I[6723,[],"MetadataBoundary"]
+4:"$Sreact.suspense"
+5:I[4714,[],"IconMark"]
+0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Избранное | PhoneMarket"}],["$","meta","1",{"name":"description","content":"Избранные товары PhoneMarket."}],["$","meta","2",{"property":"og:title","content":"PhoneMarket"}],["$","meta","3",{"property":"og:description","content":"Маркетплейс аксессуаров для смартфонов с быстрым заказом через WhatsApp."}],["$","meta","4",{"property":"og:type","content":"website"}],["$","meta","5",{"name":"twitter:card","content":"summary"}],["$","meta","6",{"name":"twitter:title","content":"PhoneMarket"}],["$","meta","7",{"name":"twitter:description","content":"Маркетплейс аксессуаров для смартфонов с быстрым заказом через WhatsApp."}],["$","link","8",{"rel":"icon","href":"/examples/accessories-store/favicon.ico?603d046c9a6fdfbb","type":"image/x-icon","sizes":"16x16"}],["$","$L5","9",{}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ormM78nz-S_psBKqrbUfo"}
