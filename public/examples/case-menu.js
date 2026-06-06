@@ -76,6 +76,107 @@
       .replace(/"/g, "&quot;");
   }
 
+  var faqAnswers = {
+    plumbing: {
+      "Выезжаете срочно?":
+        "Да. Если мастер свободен, выезд возможен в день обращения. Напишите проблему и адрес, чтобы быстро оценить ситуацию.",
+      "Можно узнать цену заранее?":
+        "Да. По фото, видео или короткому описанию можно назвать ориентир. Точная стоимость фиксируется после осмотра до начала работы.",
+      "Работаете по Бишкеку?":
+        "Да, пример кейса рассчитан на Бишкек: выезд по городу, квартиры, дома и коммерческие помещения.",
+      "Даёте гарантию?":
+        "Да. На выполненные работы можно указать гарантию, а условия зависят от типа услуги и материалов.",
+      "Можно вызвать мастера вечером?":
+        "Да, можно оставить заявку вечером. Мастер или администратор согласует ближайшее удобное время.",
+    },
+    clinic: {
+      "Как записаться на приём?":
+        "Можно оставить заявку на сайте или написать в WhatsApp. Администратор уточнит направление, врача и удобное время.",
+      "Можно ли записаться через WhatsApp?":
+        "Да. В кейсе контакты скрыты, но в реальном сайте кнопка WhatsApp ведёт на рабочий номер клиники.",
+      "Можно ли узнать цену заранее?":
+        "Да. Можно показать стоимость консультаций, диагностики и анализов в разделе услуг, а администратор уточнит детали перед записью.",
+      "Есть ли приём детей?":
+        "Да, для клиники можно выделить педиатрию, семейные приёмы и отдельные условия для детей.",
+      "Нужно ли приходить заранее?":
+        "Обычно достаточно прийти за 10-15 минут до приёма, чтобы оформить документы и спокойно пройти регистрацию.",
+      "Можно ли отменить или перенести запись?":
+        "Да. В реальном проекте можно подключить перенос записи через администратора, WhatsApp или CRM.",
+    },
+    "accessories-store": {
+      "Как оформить заказ?":
+        "Выберите товар, добавьте в корзину или нажмите WhatsApp. В реальном магазине заявка приходит менеджеру или в CRM.",
+      "Есть ли доставка?":
+        "Да. Можно показать доставку по городу, самовывоз и отправку по регионам.",
+      "Можно оплатить при получении?":
+        "Да. В проект можно добавить оплату наличными, переводом, картой или онлайн-эквайрингом.",
+      "Можно подобрать аксессуар под модель?":
+        "Да. Каталог можно фильтровать по бренду, модели телефона, цвету, типу товара и цене.",
+      "Товары реально продаются?":
+        "Это сайт-кейс, поэтому контакты и реальные продажи специально отключены.",
+    },
+  };
+
+  function normalizeText(value) {
+    return String(value || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findFaqAnswer(question, button) {
+    var answers = faqAnswers[config.key] || {};
+    if (answers[question]) return answers[question];
+
+    var section = button.closest("section");
+    var sectionText = normalizeText(section ? section.textContent : "");
+    if (/faq|частые вопросы|часто задаваемые вопросы|вопросы/i.test(sectionText)) {
+      return "Это демонстрационный ответ для сайта-кейса. В реальном проекте этот блок заполняется под условия, цены и процесс конкретного бизнеса.";
+    }
+
+    return "";
+  }
+
+  function setFaqOpen(button, content, open) {
+    button.setAttribute("data-state", open ? "open" : "closed");
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+    content.setAttribute("data-state", open ? "open" : "closed");
+    content.hidden = !open;
+
+    var item = button.closest('[data-state="open"], [data-state="closed"]');
+    if (item && item !== button) {
+      item.setAttribute("data-state", open ? "open" : "closed");
+    }
+  }
+
+  function setupCaseFaq() {
+    Array.prototype.slice
+      .call(document.querySelectorAll("button[aria-controls]"))
+      .forEach(function (button) {
+        if (button.dataset.caseFaqReady === "true") return;
+
+        var contentId = button.getAttribute("aria-controls");
+        var content = contentId ? document.getElementById(contentId) : null;
+        var question = normalizeText(button.textContent);
+        var answer = findFaqAnswer(question, button);
+
+        if (!content || !answer) return;
+
+        button.dataset.caseFaqReady = "true";
+        button.classList.add("case-faq-trigger");
+        content.classList.add("case-faq-panel");
+
+        if (!normalizeText(content.textContent)) {
+          content.innerHTML = '<div class="case-faq-answer">' + escapeHtml(answer) + "</div>";
+        }
+
+        setFaqOpen(button, content, false);
+
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          setFaqOpen(button, content, button.getAttribute("data-state") !== "open");
+        });
+      });
+  }
+
   function readHeaderLinks() {
     var anchors = Array.prototype.slice.call(document.querySelectorAll("header nav a[href]"));
     return anchors
@@ -86,6 +187,8 @@
         return link[0] && link[1] && link[1].indexOf("/examples/") === 0;
       });
   }
+
+  setupCaseFaq();
 
   var links = uniqueLinks(config.links.concat(readHeaderLinks()));
 
