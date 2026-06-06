@@ -1,0 +1,269 @@
+[style*="opacity:0"] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (max-width: 639px) {
+  body {
+    padding-bottom: 64px;
+  }
+
+  .section-shell {
+    width: min(100% - 24px, 1120px);
+  }
+
+  section {
+    scroll-margin-top: 72px;
+  }
+
+  header .section-shell {
+    height: 4rem;
+  }
+
+  header .size-10 {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  header .text-base {
+    font-size: 0.9rem !important;
+    line-height: 1.15rem !important;
+  }
+
+  main > section:first-child {
+    padding-top: 5rem !important;
+  }
+
+  main > section:first-child .section-shell {
+    min-height: auto !important;
+    gap: 1rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  main > section:first-child h1 {
+    font-size: 1.72rem !important;
+    line-height: 1.08 !important;
+  }
+
+  main > section:first-child p {
+    font-size: 0.88rem !important;
+    line-height: 1.35rem !important;
+  }
+
+  main > section:first-child .mt-7 {
+    margin-top: 1rem !important;
+  }
+
+  main > section:first-child .mt-5 {
+    margin-top: 0.85rem !important;
+  }
+
+  main > section:first-child .gap-10 {
+    gap: 1.25rem !important;
+  }
+
+  main > section:first-child .aspect-\[4\/5\] {
+    aspect-ratio: 16 / 11 !important;
+  }
+
+  main > section:first-child .absolute.-bottom-5 {
+    position: relative !important;
+    inset: auto !important;
+    margin-top: 0.75rem !important;
+  }
+
+  .py-18 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .pt-12 {
+    padding-top: 2rem !important;
+  }
+
+  .pb-24 {
+    padding-bottom: 3.75rem !important;
+  }
+
+  .pb-16 {
+    padding-bottom: 2.1rem !important;
+  }
+
+  .mt-10 {
+    margin-top: 1rem !important;
+  }
+
+  .mt-8 {
+    margin-top: 0.95rem !important;
+  }
+
+  .mt-7 {
+    margin-top: 1rem !important;
+  }
+
+  .mt-6 {
+    margin-top: 0.9rem !important;
+  }
+
+  .mt-5 {
+    margin-top: 0.8rem !important;
+  }
+
+  .mb-5 {
+    margin-bottom: 0.8rem !important;
+  }
+
+  .mb-4 {
+    margin-bottom: 0.7rem !important;
+  }
+
+  .p-6 {
+    padding: 0.78rem !important;
+  }
+
+  .p-5 {
+    padding: 0.75rem !important;
+  }
+
+  .p-3 {
+    padding: 0.52rem !important;
+  }
+
+  .px-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .px-5 {
+    padding-left: 0.95rem !important;
+    padding-right: 0.95rem !important;
+  }
+
+  .px-4 {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+
+  .py-5 {
+    padding-top: 0.72rem !important;
+    padding-bottom: 0.72rem !important;
+  }
+
+  .py-4 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  .py-3 {
+    padding-top: 0.62rem !important;
+    padding-bottom: 0.62rem !important;
+  }
+
+  .h-18 {
+    height: 4rem !important;
+  }
+
+  .h-12 {
+    height: 2.45rem !important;
+  }
+
+  .h-11 {
+    height: 2.35rem !important;
+  }
+
+  .size-14 {
+    width: 2.65rem !important;
+    height: 2.65rem !important;
+  }
+
+  .size-12 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .size-11 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .size-10 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+
+  .text-4xl {
+    font-size: 1.65rem !important;
+    line-height: 1.95rem !important;
+  }
+
+  .text-3xl {
+    font-size: 1.28rem !important;
+    line-height: 1.6rem !important;
+  }
+
+  .text-lg {
+    font-size: 0.86rem !important;
+    line-height: 1.32rem !important;
+  }
+
+  .text-base {
+    font-size: 0.82rem !important;
+    line-height: 1.25rem !important;
+  }
+
+  .text-sm {
+    font-size: 0.76rem !important;
+    line-height: 1.08rem !important;
+  }
+
+  .leading-8 {
+    line-height: 1.35rem !important;
+  }
+
+  .leading-7 {
+    line-height: 1.28rem !important;
+  }
+
+  .leading-6 {
+    line-height: 1.2rem !important;
+  }
+
+  .tracking-\[0\.18em\] {
+    letter-spacing: 0.12em !important;
+  }
+
+  .rounded-lg {
+    border-radius: 0.55rem !important;
+  }
+
+  .rounded-md {
+    border-radius: 0.45rem !important;
+  }
+
+  .grid.gap-4,
+  .gap-4 {
+    gap: 0.55rem !important;
+  }
+
+  .gap-8 {
+    gap: 1.25rem !important;
+  }
+
+  .gap-3 {
+    gap: 0.55rem !important;
+  }
+
+  .fixed.bottom-0 {
+    gap: 0.5rem !important;
+    padding: 0.55rem !important;
+  }
+
+  .fixed.bottom-0 a {
+    height: 2.45rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .soft-grid {
+    background-size: 34px 34px;
+  }
+}
